@@ -1,0 +1,102 @@
+[
+    {
+        "id": 5738,
+        "title": "Curried Shrimp",
+        "image": "https://spoonacular.com/recipeImages/5738-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 262,
+        "protein": "24g",
+        "fat": "16g",
+        "carbs": "6g"
+    },
+    {
+        "id": 8758,
+        "title": "Herbed Arugula-Tomato Salad with Chicken",
+        "image": "https://spoonacular.com/recipeImages/8758-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 258,
+        "protein": "26g",
+        "fat": "15g",
+        "carbs": "5g"
+    },
+    {
+        "id": 111365,
+        "title": "Sauteed Chicken with Capers and Lemon Butter",
+        "image": "https://spoonacular.com/recipeImages/111365-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 257,
+        "protein": "25g",
+        "fat": "16g",
+        "carbs": "5g"
+    },
+    {
+        "id": 271985,
+        "title": "Skewered Garlic Shrimp",
+        "image": "https://spoonacular.com/recipeImages/271985-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 273,
+        "protein": "25g",
+        "fat": "16g",
+        "carbs": "5g"
+    },
+    {
+        "id": 432051,
+        "title": "Cajun Shrimp & Cucumber Wraps",
+        "image": "https://spoonacular.com/recipeImages/432051-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 265,
+        "protein": "25g",
+        "fat": "16g",
+        "carbs": "6g"
+    },
+    {
+        "id": 535616,
+        "title": "Shrimp Dumplings",
+        "image": "https://spoonacular.com/recipeImages/535616-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 256,
+        "protein": "25g",
+        "fat": "15g",
+        "carbs": "6g"
+    },
+    {
+        "id": 557934,
+        "title": "Slow Cooker Pesto Ranch Chicken",
+        "image": "https://spoonacular.com/recipeImages/557934-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 274,
+        "protein": "26g",
+        "fat": "15g",
+        "carbs": "6g"
+    },
+    {
+        "id": 752844,
+        "title": "Roasted Leg of Lamb with Saffron and Olive Salsa",
+        "image": "https://spoonacular.com/recipeImages/752844-312x231.jpeg",
+        "imageType": "jpeg",
+        "calories": 273,
+        "protein": "25g",
+        "fat": "15g",
+        "carbs": "4g"
+    },
+    {
+        "id": 1023073,
+        "title": "Shrimp Avocado Salad",
+        "image": "https://spoonacular.com/recipeImages/1023073-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 257,
+        "protein": "24g",
+        "fat": "16g",
+        "carbs": "5g"
+    },
+    {
+        "id": 1027664,
+        "title": "rosemary garlic shrimp and tomato kebabs",
+        "image": "https://spoonacular.com/recipeImages/1027664-312x231.jpg",
+        "imageType": "jpg",
+        "calories": 255,
+        "protein": "24g",
+        "fat": "15g",
+        "carbs": "5g"
+    }
+]

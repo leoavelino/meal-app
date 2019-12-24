@@ -1,0 +1,58 @@
+// @mixin has-nth($element) {
+//   &:nth-child(#{$element}) {
+//     padding: #{$element}px
+//   }
+// }
+.App {
+
+}
+
+.margin-20 {
+  margin: 20%;
+}
+
+.macro-box {
+  // margin: 18% 30%;
+  margin: 18% calc(30% - 60px);
+
+  .macro-box-card >
+    .rainbow-card_header-container {
+      justify-content: center;
+    }
+    
+  
+  .macro-box-title {
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+  .macro-input {
+    margin: 15px;
+    width: 50%;
+    max-width: 300px;
+  }
+  .get-meal-btn {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 20%;
+    min-width: 150px;
+  }
+}
+
+.meals-container {
+  margin: 5% 10%;
+
+  .recipes-main {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: minmax(250px, auto);
+    // grid-row: span 3;
+  }
+
+  .recipe-card {
+    // grid-column-start: 2;
+    // grid-row: span;
+  }
+
+}
