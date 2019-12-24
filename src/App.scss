@@ -13,7 +13,7 @@
 
 .macro-box {
   // margin: 18% 30%;
-  margin: 18% calc(30% - 60px);
+  margin: 5% calc(30% - 60px);
 
   .macro-box-card >
     .rainbow-card_header-container {
@@ -55,4 +55,26 @@
     // grid-row: span;
   }
 
+}
+
+.topbar {
+  height: 20vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  // margin: 5% calc(30% - 60px);
+  .login-card >
+    .rainbow-card_header-container {
+      justify-content: center;
+    }
+
+    .login-title {
+      font-size: 2.2rem;
+      font-weight: 400;
+    }
 }
