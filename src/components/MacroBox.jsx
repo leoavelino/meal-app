@@ -3,13 +3,13 @@ import React from 'react'
 import { Card } from 'react-rainbow-components'
 import { Input } from 'react-rainbow-components'
 import { Button } from 'react-rainbow-components'
+import {useHistory} from 'react-router-dom'
 
-const MacroBox = ({ displayMacroBox, fetchMeals }) => {
-
+const MacroBox = ({ setSearchParams }) => {
     const [protein, setProtein] = React.useState(30)
     const [carbs, setCarbs] = React.useState(30)
     const [fat, setFat] = React.useState(12)
-
+    const history = useHistory()
     const handleProteinInputChange = (value) => {
         setProtein(parseInt(value))
     }
@@ -20,7 +20,12 @@ const MacroBox = ({ displayMacroBox, fetchMeals }) => {
         setFat(parseInt(value))
     }
 
-    return displayMacroBox ? (
+    const getMeal = () => {
+        setSearchParams({protein, carbs, fat})
+        history.push('/meals')
+    }
+
+    return (
         <div className="macro-box">
             <Card
                 className="macro-box-card"
@@ -54,12 +59,12 @@ const MacroBox = ({ displayMacroBox, fetchMeals }) => {
                 <Button
                     className="get-meal-btn"
                     label="Get Meal"
-                    onClick={() => fetchMeals(protein, carbs, fat)}
+                    onClick={getMeal}
                     variant="brand"
                 />
             </Card>
         </div>
-    ) : null
+    )
 }
 
 export default MacroBox
