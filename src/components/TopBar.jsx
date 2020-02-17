@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext';
 const TopBar = () => {
     const { authContext } = useContext(AppContext);
     return (
-        <div className="topbar">
+            <header className="topbar rainbow-align-content_space-between rainbow-background-color_white rainbow-p-vertical_medium react-rainbow-global-header">
             <div className="topbar__links">
                 <Link style={{ fontSize: '20px', paddingRight: '6vw' }} to="/">Home</Link>
                 {authContext.isLoggedIn ?
@@ -13,7 +13,8 @@ const TopBar = () => {
                     :
                     <Link style={{ fontSize: '20px' }} to="/login">Login</Link>}
             </div>
-        </div>
+            </header>
+            
     );
 };
 

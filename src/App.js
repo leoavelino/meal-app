@@ -5,7 +5,7 @@ import Signup from './pages/Signup'
 import Meals from './pages/Meals.jsx'
 import TopBar from './components/TopBar'
 
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AppContext from './context/AppContext'
 
 import './App.scss'
