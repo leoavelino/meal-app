@@ -4,8 +4,7 @@ import AppContext from '../context/AppContext'
 import _ from 'lodash'
 
 const Home = () => {
-	const {searchParams, setSearchParams} = React.useContext(AppContext)
-	console.log(_.isEmpty(searchParams))
+	const {setSearchParams} = React.useContext(AppContext)
     return <MacroBox setSearchParams={setSearchParams}/>
 
 }
