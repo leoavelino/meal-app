@@ -14,13 +14,11 @@ const Meals = () => {
 
     const removeRepeatedMeals = (data) => _.uniqWith(data, (a, b) => 
         a.title === b.title && a.fat === b.fat && a.protein === b.protein && a.carbs === b.carbs && a.calories === b.calories);
-        
+
     const fetchMeals = ({ protein, carbs, fat }) => {
         setFetchingMeals(true);
-        const url = 'https://api.meetplan.ml/api/v1/meals';
-        // const url = 'http://localhost:3001/api/v1/meals'
         axios
-            .post(url, {
+            .post(`${process.env.REACT_APP_MEET_PLAN_API}/meals`, {
                 carbs,
                 fat,
                 protein
@@ -34,8 +32,7 @@ const Meals = () => {
 
     const fetchMealInfo = mealId => {
         setFetchingMeals(true);
-        const url = `https://api.meetplan.ml/api/v1/meals/${mealId}`;
-        // const url = `http://localhost:3001/api/v1/meals/${mealId}`
+        const url = `${process.env.REACT_APP_MEET_PLAN_API}/meals/${mealId}`;
         axios
             .get(url)
             .then(response => {
@@ -58,7 +55,6 @@ const Meals = () => {
             fetchMeals(searchParams);
         }
     }, []);
-    console.log({ searchParams, mealsData });
 
     return fetchingMeals ? (
         <div className="rainbow-align-content_center rainbow-position_relative margin-20">

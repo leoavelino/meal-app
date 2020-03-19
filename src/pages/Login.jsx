@@ -7,8 +7,7 @@ import AppContext from '../context/AppContext'
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
-    const url = 'https://api.meetplan.ml/api/v1/auth/login'
-    // const url = 'http://localhost:3001/api/v1/auth/login'
+    const url = `${process.env.REACT_APP_MEET_PLAN_API}/auth/login`
     const {authContext, setAuthContext} = React.useContext(AppContext)
     const history = useHistory()
     const [username, setUsername] = React.useState()
@@ -23,7 +22,6 @@ const Login = () => {
             name: username,
             password
         }).then(((response) => {
-            console.log(response)
             if (response.data && response.data.code === 'NotAuthorizedException') {
                 setAuthContext({...authContext, isLoggedIn: false})
                 throw new Error('NotAuthorizedException')

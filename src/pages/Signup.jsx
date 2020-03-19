@@ -6,8 +6,7 @@ import Notification from '../components/notification/Notification';
 import { useHistory } from 'react-router-dom';
 
 const Signup = () => {
-    const url = 'https://api.meetplan.ml/api/v1/auth/register';
-    // const url = 'http://localhost:3001/api/v1/auth/register';
+    const url = `${process.env.REACT_APP_MEET_PLAN_API}/auth/register`;
 
     const [username, setUsername] = React.useState();
     const [email, setEmail] = React.useState();
@@ -24,7 +23,6 @@ const Signup = () => {
             email,
             password
         }).then(((response) => {
-            console.log(response);
             if (response.data && response.data.code) {
                 throw new Error(response.data.message);
             }
