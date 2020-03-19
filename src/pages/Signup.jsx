@@ -106,7 +106,7 @@ const Signup = () => {
                     <Button
                         className="rainbow-m-around_medium"
                         onClick={onSignup}
-                        label="Login"
+                        label="Create account"
                         disabled={!isValid()}
                         variant="brand"
                         style={{ width: '268px' }}
