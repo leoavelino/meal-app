@@ -12,6 +12,9 @@ const Meals = () => {
     const [mealsData, setMealsData] = React.useState();
     const { searchParams } = React.useContext(AppContext);
 
+    const removeRepeatedMeals = (data) => _.uniqWith(data, (a, b) => 
+        a.title === b.title && a.fat === b.fat && a.protein === b.protein && a.carbs === b.carbs && a.calories === b.calories);
+        
     const fetchMeals = ({ protein, carbs, fat }) => {
         setFetchingMeals(true);
         const url = 'https://api.meetplan.ml/api/v1/meals';
@@ -24,7 +27,7 @@ const Meals = () => {
             })
             .then(response => {
                 setFetchingMeals(false);
-                setMealsData(response.data);
+                setMealsData(removeRepeatedMeals(response.data));
             })
             .catch(err => console.error(err));
     };
@@ -65,9 +68,9 @@ const Meals = () => {
                 </h1>
         </div>
     ) : _.isEmpty(mealsData) ?
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-                We could not find recipes for the specified macronutrients. <Link style={{paddingLeft: '5px'}}to="/">Go back</Link>
-        </div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                We could not find recipes for the specified macronutrients. <Link style={{ paddingLeft: '5px' }} to="/">Go back</Link>
+            </div>
             : (<div className="meals-container">
                 <div className="recipes-main">
                     {!_.isEmpty(mealsData) && _.map(mealsData, recipe => (
