@@ -1,21 +1,13 @@
-.App {
-
-}
-
 .margin-20 {
   margin: 20%;
 }
 
 .macro-box {
-  // margin: 18% 30%;
   margin: 5% calc(30% - 60px);
-
   .macro-box-card >
     .rainbow-card_header-container {
       justify-content: center;
     }
-    
-  
   .macro-box-title {
     font-size: 2.2rem;
     font-weight: 400;
@@ -42,7 +34,26 @@
     grid-gap: 15px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: minmax(250px, auto);
+
+    .recipe-title-container {
+      display: flex;
+      flex-direction: column;
+      .recipe-title-text {
+        font-size: 20px; 
+        font-weight: 500; 
+        height: 2.5em;
+      }
+      .recipe-title-macros {
+        padding-top: 15px;
+        font-weight: 300;
+      }
+    }
   }
+}
+
+.recipe-not-found {
+  display: flex;
+  justify-content: center;
 }
 
 .topbar {
@@ -56,7 +67,6 @@
   display: flex;
   justify-content: center;
   margin-top: 5em;
-  // margin: 5% calc(30% - 60px);
   .login-card >
     .rainbow-card_header-container {
       justify-content: center;
@@ -65,5 +75,9 @@
     .login-title {
       font-size: 2.2rem;
       font-weight: 400;
+    }
+    .create-acc-content {
+      display: flex;
+      justify-content: center;
     }
 }

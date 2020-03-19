@@ -12,7 +12,7 @@ const Meals = () => {
     const [mealsData, setMealsData] = React.useState();
     const { searchParams } = React.useContext(AppContext);
 
-    const removeRepeatedMeals = (data) => _.uniqWith(data, (a, b) => 
+    const removeRepeatedMeals = (data) => _.uniqWith(data, (a, b) =>
         a.title === b.title && a.fat === b.fat && a.protein === b.protein && a.carbs === b.carbs && a.calories === b.calories);
 
     const fetchMeals = ({ protein, carbs, fat }) => {
@@ -43,13 +43,6 @@ const Meals = () => {
             .catch(err => console.error(err));
     };
 
-    const formatTitle = (title) => {
-        const formattedTitle = _.startCase(title.toLowerCase());
-        if (title.length > 46) {
-            return formattedTitle.slice(0, 45) + '...';
-        }
-        return formattedTitle;
-    };
     React.useEffect(() => {
         if (!_.isEmpty(searchParams)) {
             fetchMeals(searchParams);
@@ -64,27 +57,15 @@ const Meals = () => {
                 </h1>
         </div>
     ) : _.isEmpty(mealsData) ?
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="recipe-not-found">
                 We could not find recipes for the specified macronutrients. <Link style={{ paddingLeft: '5px' }} to="/">Go back</Link>
             </div>
             : (<div className="meals-container">
                 <div className="recipes-main">
                     {!_.isEmpty(mealsData) && _.map(mealsData, recipe => (
-                        <div key={recipe.id} className="recipe-card">
+                        <div key={recipe.id}>
                             <Card
-                                title={
-                                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                        <div style={{ fontSize: '20px', fontWeight: '500', height: '2.5em' }}>
-                                            {formatTitle(recipe.title)}
-                                        </div>
-                                        <div style={{ paddingTop: '15px', fontWeight: 300 }}>
-                                            <div>Calories: {recipe.calories}</div>
-                                            <div>Protein: {recipe.protein}</div>
-                                            <div>Carbohydrates: {recipe.carbs}</div>
-                                            <div>Fat: {recipe.fat}</div>
-                                        </div>
-                                    </div>
-                                }
+                                title={<MealTitle recipe={recipe} />}
                                 footer={<div className="rainbow-m-horizontal_medium">
                                     <Button
                                         variant="base"
@@ -99,13 +80,38 @@ const Meals = () => {
                                     height={231}
                                     width={312}
                                     className="rainbow-p-vertical_x-large rainbow-m_auto rainbow-align-content_center"
-                                    alt="" />
+                                    alt=""
+                                />
                             </Card>
                         </div>
                     ))}
                 </div>
             </div>);
 
+};
+
+const MealTitle = ({ recipe }) => {
+    const formatTitle = (title) => {
+        const formattedTitle = _.startCase(title.toLowerCase());
+        if (title.length > 46) {
+            return formattedTitle.slice(0, 45) + '...';
+        }
+        return formattedTitle;
+    };
+
+    return (
+        <div className="recipe-title-container">
+            <div className="recipe-title-text">
+                {formatTitle(recipe.title)}
+            </div>
+            <div className="recipe-title-macros">
+                <div>Calories: {recipe.calories}</div>
+                <div>Protein: {recipe.protein}</div>
+                <div>Carbohydrates: {recipe.carbs}</div>
+                <div>Fat: {recipe.fat}</div>
+            </div>
+        </div>
+    );
 };
 
 export default Meals;

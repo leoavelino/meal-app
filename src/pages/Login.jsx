@@ -52,7 +52,6 @@ const Login = () => {
                         label="Username"
                         type="email"
                         onChange={onUsernameInputChange}
-                        // value={username}
                         required
                         placeholder="Enter your username"
                         className="rainbow-p-around_medium"
@@ -74,7 +73,7 @@ const Login = () => {
                         variant="brand"
                         style={{ width: '268px' }}
                     />
-                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <div className="create-acc-content">
                         <Link to="/signup">Create an account</Link>
                     </div>
                 </div>
